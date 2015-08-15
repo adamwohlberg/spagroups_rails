@@ -1,0 +1,13 @@
+<div class="row">
+	<h3>Schedule your spa trip</h3>
+
+<!-- 	<p>1. Location 2. Arrival Date.</p> -->
+	<%= form_for :reservation do |f| %>
+
+	  Location <%= f.collection_select :spa_id, Spa.order(:name),:id,:name, include_blank: true %>
+	  Arrival date: <%= f.text_field :first_name %><br />
+	  Your first name: <%= f.text_field User.first_name %><br />
+	  Email address: <%= f.text_field User.email %><br />
+	  <%= f.submit "Next" %>
+	<% end %>
+</div> 

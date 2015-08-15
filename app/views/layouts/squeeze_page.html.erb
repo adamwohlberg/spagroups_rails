@@ -12,9 +12,14 @@
     <%= csrf_meta_tags %>
   </head>
 
+    <%= render 'layouts/header' %> 
+
   <body>
 
     <%= yield %>
 
   </body>
+
+    <%= render 'layouts/footer' %>
+    
 </html>
