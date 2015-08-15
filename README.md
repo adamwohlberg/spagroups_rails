@@ -1,0 +1,1 @@
+**a rails version of spagroups**
