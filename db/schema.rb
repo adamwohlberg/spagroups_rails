@@ -11,12 +11,54 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150815200753) do
+ActiveRecord::Schema.define(version: 20150815203903) do
+
+  create_table "confirmations", id: false, force: :cascade do |t|
+    t.integer "user_id",       limit: 4
+    t.integer "group_trip_id", limit: 4
+  end
+
+  create_table "group_leaders", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  create_table "group_trips", force: :cascade do |t|
+    t.date     "arrival_date"
+    t.integer  "spa_id",          limit: 4
+    t.integer  "group_leader_id", limit: 4
+    t.string   "name",            limit: 255
+    t.integer  "registered",      limit: 4
+    t.integer  "confirmed",       limit: 4
+    t.integer  "group_rates_at",  limit: 4,     default: 8
+    t.integer  "comp_stay_at",    limit: 4,     default: 12
+    t.string   "facebook_url",    limit: 255
+    t.string   "image",           limit: 255
+    t.string   "facebook_image",  limit: 255
+    t.text     "description",     limit: 65535
+    t.string   "paypal",          limit: 255
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
+  end
+
+  create_table "registrations", id: false, force: :cascade do |t|
+    t.integer "user_id",       limit: 4
+    t.integer "group_trip_id", limit: 4
+  end
 
   create_table "spas", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.string   "city",       limit: 255
     t.string   "state",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "first_name", limit: 255
+    t.string   "last_name",  limit: 255
+    t.string   "email",      limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
