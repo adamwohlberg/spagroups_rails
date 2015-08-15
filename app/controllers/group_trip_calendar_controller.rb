@@ -1,0 +1,2 @@
+class GroupTripCalendarController < ApplicationController
+end

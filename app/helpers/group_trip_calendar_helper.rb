@@ -1,0 +1,2 @@
+module GroupTripCalendarHelper
+end
