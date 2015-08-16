@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150816060758) do
+ActiveRecord::Schema.define(version: 20150816141640) do
 
   create_table "confirmations", id: false, force: :cascade do |t|
     t.integer "user_id",       limit: 4
@@ -24,7 +24,32 @@ ActiveRecord::Schema.define(version: 20150816060758) do
     t.datetime "updated_at",           null: false
   end
 
-  create_table "group_trips", force: :cascade do |t|
+  create_table "registrations", id: false, force: :cascade do |t|
+    t.integer "user_id",       limit: 4
+    t.integer "group_trip_id", limit: 4
+  end
+
+  create_table "reservation_dates", force: :cascade do |t|
+    t.string "reservation_id", limit: 255
+    t.date   "date"
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.integer  "user_id",        limit: 4
+    t.integer  "spa_id",         limit: 4
+    t.date     "arrival_date"
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
+    t.string   "first_name",     limit: 255
+    t.string   "email",          limit: 255
+    t.integer  "nights",         limit: 4
+    t.string   "date_range",     limit: 255
+    t.string   "status",         limit: 255, default: "pending"
+    t.integer  "guests",         limit: 4
+    t.date     "departure_date"
+  end
+
+  create_table "retreats", force: :cascade do |t|
     t.date     "arrival_date"
     t.integer  "spa_id",          limit: 4
     t.integer  "group_leader_id", limit: 4
@@ -40,30 +65,6 @@ ActiveRecord::Schema.define(version: 20150816060758) do
     t.string   "paypal",          limit: 255
     t.datetime "created_at",                                 null: false
     t.datetime "updated_at",                                 null: false
-  end
-
-  create_table "registrations", id: false, force: :cascade do |t|
-    t.integer "user_id",       limit: 4
-    t.integer "group_trip_id", limit: 4
-  end
-
-  create_table "reservation_dates", force: :cascade do |t|
-    t.string "reservation_id", limit: 255
-    t.date   "date"
-  end
-
-  create_table "reservations", force: :cascade do |t|
-    t.integer  "user_id",      limit: 4
-    t.integer  "spa_id",       limit: 4
-    t.date     "arrival_date"
-    t.datetime "created_at",                                   null: false
-    t.datetime "updated_at",                                   null: false
-    t.string   "first_name",   limit: 255
-    t.string   "email",        limit: 255
-    t.integer  "nights",       limit: 4
-    t.string   "date_range",   limit: 255
-    t.string   "status",       limit: 255, default: "pending"
-    t.integer  "guests",       limit: 4
   end
 
   create_table "spas", force: :cascade do |t|

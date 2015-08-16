@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
 
-	layout 'squeeze_page'
+	layout 'static_page'
 
 	def faq
 	end

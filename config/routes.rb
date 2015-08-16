@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'reservations#new'
 
   resources :reservations
+  resources :retreats
 
   get 'privacy_policy', to: 'static_pages#privacy_policy'
   get 'faq', to: 'static_pages#faq'
@@ -64,4 +65,6 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  
+  # get ':controller/:action/:status/:id'
 end
