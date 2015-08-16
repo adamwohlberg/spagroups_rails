@@ -2,14 +2,16 @@
   <div class="large-9 columns" role="content">
   <div id="reservations">
     <h2 id="month">
+      <span style="font-size:12px;">Select status (request, confirmed)></span>
       <%= link_to "<<", date: @date.prev_month %>
       <%= @date.strftime("%B %Y") %>
       <%= link_to ">>", date: @date.next_month %>
+      <span style="font-size:12px;">Select Spa ></span>
     </h2>
     <%= calendar @date do |date| %>
       <%= date.day %>
-      <% if @reservations_by_date[date] %>          
-            <li class="reservation_counter"><%= link_to(@reservations_by_date[date].count, "#") %></li>
+      <% if @reservations_count_by_date[date] %>          
+            <li class="reservation_counter"><%= link_to(@reservations_count_by_date[date], "#") %></li>
       <% end %>
     <% end %>
   </div>

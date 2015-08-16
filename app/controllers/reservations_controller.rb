@@ -1,10 +1,14 @@
 class ReservationsController < ApplicationController
 
-	layout 'squeeze_page'
+  layout 'squeeze_page', only: [:new]
 
   def index
     @reservation = Reservation.new
   end
+
+  def new
+    @reservation = Reservation.new
+  end 
 
   def create
   	@reservation = Reservation.new(reservation_params) 
@@ -21,7 +25,7 @@ class ReservationsController < ApplicationController
   private
 
   def reservation_params
-  	params.require(:reservation).permit(:user_id, :spa_id, :arrival_date, :nights, :first_name, :email)
+  	params.require(:reservation).permit(:user_id, :spa_id, :arrival_date, :nights, :first_name, :email, :guests)
   end
 
 end

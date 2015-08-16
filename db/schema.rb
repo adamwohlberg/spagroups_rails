@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150816051929) do
+ActiveRecord::Schema.define(version: 20150816060758) do
 
   create_table "confirmations", id: false, force: :cascade do |t|
     t.integer "user_id",       limit: 4
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 20150816051929) do
     t.integer  "nights",       limit: 4
     t.string   "date_range",   limit: 255
     t.string   "status",       limit: 255, default: "pending"
+    t.integer  "guests",       limit: 4
   end
 
   create_table "spas", force: :cascade do |t|
