@@ -1,20 +1,21 @@
-<div class="row" style="color:black;">
+<div class="row">
   <div class="small-12 columns">
     <div id="header">
-      <div style="background: black; float:left; position:relative; padding:10px 0 0 15px; font-style:oblique; font-family:Georgia, 'Times New Roman', Times, serif; color:#999; font-size:14px; font-weight:lighter">
+      <div style="background: white; float:left; position:relative; padding:10px 0 0 15px; font-style:oblique; font-family:Georgia, 'Times New Roman', Times, serif; color:#999; font-size:14px; font-weight:lighter">
         <div class="spagroupsLogo">
-          <%= image_tag('spagroupslogo.png', :class => "spagroupsLogo") %></div>
-        <span id="tagline" style="margin:0 0 0 5px">Join a Group and Save Up to 50%</span> </div>
+          <%= link_to(image_tag('spagroupslogo.png', :class => "spagroupsLogo"),:controller => 'reservations', :action => 'new') %></div>
+        <span id="tagline" style="padding-top: 5px; margin:0 0 0 5px">Join a Group and Save Up to 50%</span> </div>
       <div style="float:left; position:relative; padding:15px 0 0 40px">
         <div class="btnStart"><a href="#" style="height:100%; width:100%; display:block"></a></div>
         <div class="btnFind"><a href="find.php" style="height:100%; width:100%; display:block"></a></div>
           <div class="nav-bar right">
            <ul class="button-group">
-             <li><a href="#" class="button">Link 1</a></li>
-             <li><a href="#" class="button">Link 2</a></li>
+<!--              <li><a href="#" class="button">Link 1</a></li>
+             <li><a href="#" class="button">Link 2</a></li> -->
             </ul>
           </div>
       </div>
+        <hr>
     </div>
   </div>
 </div>
