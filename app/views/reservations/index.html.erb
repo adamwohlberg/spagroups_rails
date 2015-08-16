@@ -1,22 +1,26 @@
 <div class="row">
   <div class="large-9 columns" role="content">
-  <div id="reservations">
-    <h2 id="month">
-      <div id="selector_1"><%= collection_select :spa, :spa_id, Spa.order(:id), :id, :name_with_city  %></div>
-      <%= link_to "<<", date: @date.prev_month %>
-      <%= @date.strftime("%B %Y") %>
-      <%= link_to ">>", date: @date.next_month %>
-       <div id="selector_2"><%= collection_select :status, :spa_id, Spa.order(:id), :id, :name_with_city  %></div>
-    </h2>
-    <%= calendar @date do |date| %>
-      <%= date.day %>
-      <% if (@reservations_count_by_date[date].to_i > 10) %>          
-            <li class="reservation_counter_with_guest_minimum_met"><%= link_to(@reservations_count_by_date[date], retreats_path ) %></li>
-      <% elsif (@reservations_count_by_date[date].to_i > 0)  %>
-            <li class="reservation_counter"><%= link_to(@reservations_count_by_date[date], "#" ) %></li>
+    <div id="reservations">
+      <h2 id="month">
+        <%= link_to "<<", date: @date.prev_month %>
+        <%= @date.strftime("%B %Y") %>
+        <%= link_to ">>", date: @date.next_month %>
+      </h2>
+      <%= calendar @date do |date| %>
+        <%= date.day %>
+        <% if (@reservations_count_by_date[date].to_i > 10) %>          
+              <li class="reservation_counter_with_guest_minimum_met"><%= link_to(@reservations_count_by_date[date], retreats_path ) %></li>
+        <% elsif (@reservations_count_by_date[date].to_i > 0)  %>
+              <li class="reservation_counter"><%= link_to(@reservations_count_by_date[date], "#" ) %></li>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
+    </div>
+      <div class="large-4 columns">
+        <div id="selector_1" class="inline"><%= collection_select :spa, :spa_id, Spa.order(:id), :id, :name_with_city  %></div>
+      </div>
+      <div class="large-4 columns">
+        <div id="selector_2" class="inline"><%= collection_select :status, :spa_id, Spa.order(:id), :id, :name_with_city  %></div>
+      </div>
   </div>
   <aside class="large-3 columns">   
     <div class="side-nav">
@@ -26,11 +30,26 @@
           <%= link_to(image_tag("belove2.png", height: "200px", width: "217px", alt: "", id: "ad1" ), "http://www.beloveapparel.com/women/")%>
         </div>
       </div>
-      <div style="height:240px; width:217px">
-        <div>
-          <%= link_to(image_tag("belove.png", height: "200px", width: "217px", alt: "", id: "ad1" ), "http://www.beloveapparel.com/women/")%>
-        </div>
-      </div>
+      <div id="responsiveAd1"> <!-- Google Adsense Code -->
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:217px;height:240px"
+                     data-ad-client="ca-pub-1429880673944819"
+                     data-ad-slot="5824155682"></ins>
+                  <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                  </script>
+       </div> <!-- END Google Adsense Code -->  
+      <div id="responsiveAd2"> <!-- Google Adsense Code -->
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:217px;height:240px"
+                     data-ad-client="ca-pub-1429880673944819"
+                     data-ad-slot="5824155682"></ins>
+                  <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                  </script>
+       </div> <!-- END Google Adsense Code --> 
     </div>
   </aside>
 </div>
