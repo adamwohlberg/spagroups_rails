@@ -1,6 +1,18 @@
 <div class="row">
   <div class="large-9 columns" role="content">
-    <hr/>
+  <div id="reservations">
+    <h2 id="month">
+      <%= link_to "<<", date: @date.prev_month %>
+      <%= @date.strftime("%B %Y") %>
+      <%= link_to ">>", date: @date.next_month %>
+    </h2>
+    <%= calendar @date do |date| %>
+      <%= date.day %>
+      <% if @reservations_by_date[date] %>          
+            <li><%= link_to(@reservations_by_date[date].count, "#") %></li>      
+      <% end %>
+    <% end %>
+  </div>
   </div>
   <aside class="large-3 columns">   
     <div class="side-nav">
