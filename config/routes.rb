@@ -6,6 +6,12 @@ Rails.application.routes.draw do
 
   get 'group_trip_calendar', to: 'group_trip_calendar#index'
 
+  get 'privacy_policy', to: 'static_pages#privacy_policy'
+  get 'faq', to: 'static_pages#faq'
+  get 'terms_of_use', to: 'static_pages#terms_of_use'
+  get 'vip_list', to: 'static_pages#vip_list'
+  get 'membership_terms', to: 'static_pages#membership_terms'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
