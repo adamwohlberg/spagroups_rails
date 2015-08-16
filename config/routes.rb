@@ -4,8 +4,6 @@ Rails.application.routes.draw do
 
   resources :reservations
 
-  get 'group_trip_calendar', to: 'group_trip_calendar#index'
-
   get 'privacy_policy', to: 'static_pages#privacy_policy'
   get 'faq', to: 'static_pages#faq'
   get 'terms_of_use', to: 'static_pages#terms_of_use'
