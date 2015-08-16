@@ -1,4 +1,3 @@
 class Reservation < ActiveRecord::Base
-	belongs_to :user
-	has_one :spa
+	belongs_to :spa
 end

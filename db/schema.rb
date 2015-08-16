@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150815222459) do
+ActiveRecord::Schema.define(version: 20150815233315) do
 
   create_table "confirmations", id: false, force: :cascade do |t|
     t.integer "user_id",       limit: 4
@@ -51,8 +51,10 @@ ActiveRecord::Schema.define(version: 20150815222459) do
     t.integer  "user_id",      limit: 4
     t.integer  "spa_id",       limit: 4
     t.date     "arrival_date"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.string   "first_name",   limit: 255
+    t.string   "email",        limit: 255
   end
 
   create_table "spas", force: :cascade do |t|
