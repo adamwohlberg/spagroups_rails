@@ -1,2 +1,18 @@
 module GroupTripCalendarHelper
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 end

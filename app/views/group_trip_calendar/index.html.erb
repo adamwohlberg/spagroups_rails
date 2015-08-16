@@ -9,7 +9,7 @@
     <%= calendar @date do |date| %>
       <%= date.day %>
       <% if @reservations_by_date[date] %>          
-            <li><%= link_to(@reservations_by_date[date].count, "#") %></li>      
+            <li class="reservation_counter"><%= link_to(@reservations_by_date[date].count, "#") %></li>
       <% end %>
     <% end %>
   </div>
