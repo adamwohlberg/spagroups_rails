@@ -9,15 +9,13 @@
       <%= calendar @date do |date| %>
         <%= date.day %>
         <% if (@reservations_count_by_date[date].to_i > 10) %>          
-              <li class="reservation_counter_with_guest_minimum_met group_minimum_size_met"><%= link_to(@reservations_count_by_date[date], retreats_path, {date: date} ) %></li>
+              <li class="reservation_counter_with_guest_minimum_met group_minimum_size_met"><%= link_to(@reservations_count_by_date[date], retreats_path(date)) %></li>
         <% elsif (@reservations_count_by_date[date].to_i > 0)  %>
               <li class="reservation_counter"><%= link_to(@reservations_count_by_date[date], "#" ) %></li>
         <% end %>
       <% end %>
     </div>
-<!--       <div class="large-9 columns"> -->
-        <div id="selector_1" class="inline">limit results by <b>destination spa</b> location: <%= collection_select :spa, :spa_id, Spa.order(:id), :id, :name_with_city  %></div>
-<!--       </div> -->
+    <span>*All destination spa locations. Click date to view retreat details by destination spa location.</span>
   </div>
   <aside class="medium-3 columns">   
     <div class="side-nav">

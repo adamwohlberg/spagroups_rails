@@ -1,13 +1,13 @@
 class Reservation < ActiveRecord::Base
 	belongs_to :spa
 	has_many :reservation_dates
+	validates_presence_of :arrival_date
 	
 	scope :pending, -> { where(status: 'pending') }
 	scope :confirmed, -> { where(status: 'confirmed') }
 	scope :deposit_paid, -> { where(status: 'deposit_paid') }
 
 	before_save :calculate_departure_date
-	after_save :populate_table_reservation_dates
 
 	private
 

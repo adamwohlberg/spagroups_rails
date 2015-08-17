@@ -66,5 +66,4 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
   
-  match ':controller(/:action(/:spa/(/:status/(/:date(:id(.:format))))))', via: [:get, :post]
 end

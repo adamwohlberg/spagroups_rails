@@ -19,7 +19,11 @@
     <% if flash[:alert] %>
       <p class="alert"><%= alert %></p>
     <% end %>
-    <%= yield %>
+    <div class="row">
+      <div class="large-9 columns">
+        <%= yield %>
+      </div>
+    </div>
 
   </body>
 

@@ -5,7 +5,7 @@ class ReservationsController < ApplicationController
   def index
     @reservations = Reservation.all
     @reservations_by_date = @reservations.group_by(&:arrival_date)
-    @reservations_count_by_date = all_reservations
+    @reservations_count_by_date = @reservations.group(:arrival_date).sum(:guests)
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
     # @all_reservations = all_reservations
   end
@@ -18,9 +18,10 @@ class ReservationsController < ApplicationController
   	@reservation = Reservation.new(reservation_params) 
     if @reservation.save
       flash[:notice] = "Congratulations! Your reservation has successfully been added to our group calendar."
-      redirect_to reservations_path(:status => 'pending',:spa => 'all')
+      redirect_to reservations_path
     else
-      render 'index'
+      flash[:alert] = "Something is wrong - please check all fields."
+      render 'new'
     end
   end
 
