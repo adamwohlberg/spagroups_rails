@@ -25,13 +25,13 @@ spas = []
     state: Faker::Address.state)
 end
 
-dates = (Date.today..(Date.today - 40.days)).to_a
+dates = (1..40).to_a
 statuses = %w(pending confirmed deposit_paid)
 60.times do
   Reservation.create! user: users.sample,
                       spa: spas.sample,
                       guests: (1..12).to_a.sample,
                       status: statuses.sample,
-                      booked_date: dates.sample
+                      booked_date: Date.today - dates.sample.days
 end
 
