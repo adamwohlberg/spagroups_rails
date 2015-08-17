@@ -15,6 +15,7 @@
 #  status         :string(255)      default("pending")
 #  guests         :integer
 #  departure_date :date
+#  booked_date    :date             not null
 #
 
 require 'test_helper'
