@@ -1,28 +1,17 @@
 <div class="row">
-  <div class="large-3 columns">
+  <div class="large-9 columns centered">
     <% @retreats.each do |retreat| %>
-      <div class="roundedImage" style="height:263px; width:419px; float:left; cursor:normal; margin:0 10px 10px 0;">
- 				<% @counter = (retreat.group_rates_at - retreat.registered) %>
- 				<% if (@counter <= 0) %>
- 				<% 	 @counter = 0 %>
- 				<% else @counter = (retreat.group_rates_at - retreat.registered) %>
- 				<% end %>
-      	<div><%= image_tag('banner-'+@counter.to_s+'.png', :class => "counterFlag")%></div>      	
-				<div class="black_bottom">
-          <div style="float:left; margin:9px 0 0 10px;" class="links"><%= link_to(retreat.spa, retreat_path(3)) %><br />
-            <span style="font-size:16px; color:#CCC"><%= retreat.spa ? retreat.spa.citystate : "Spa TBD" %></span></div>
-          <div style="float:right; margin:9px 10px 0 0px; text-align:right"><span style="font-size:11px; color:#CCC">Arrival:</span><%= retreat.arrival_date.strftime("%B %d, %Y") %><span class="links"><a href="group.php?id=<?php echo $product_id; ?>"><?php echo $product["arrival"]; ?></a><br  />
-            <span style="font-size:11px; margin:-5px 0 0 0; color:#CCC">Expires in: <span style="font-size:16px; color:#ff68fd">
-            <% now = Time.now.to_date %>
-            <% arrival_date = retreat.arrival_date %>
-            <% date_diff = (now - retreat.arrival_date).to_i %>
-            <%= puts (date_diff/(60*60*24)).floor.to_s + " days" %>
-          </div>
-</div>
-      </div>
-    <% end %>
+     	<h5>Name: <%= retreat.name %></h5>
+     	<h5>Spa: <%= retreat.spa.name %></h5>
+     	<h5>Spa: <%= retreat.spa.citystate %></h5>
+      <h5>Arrival date: <%= retreat.arrival_date.strftime("%B %d, %Y") %></h5>
+     	<h5>Registered: <%= retreat.registered %></h5>
+      <h5>Confirmed: <%= retreat.confirmed %></h5>
+     	<h5>Group rates at: <%= retreat.group_rates_at %></h5>
+      <h5>Comp stay at: <%= retreat.comp_stay_at %></h5>
+      <%= link_to('view details', retreat_path(retreat.id)) %>
+      <hr>
+    <% end %> 
 	</div>
 </div>
-
-
 
