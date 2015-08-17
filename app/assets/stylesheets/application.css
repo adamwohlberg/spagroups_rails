@@ -16,8 +16,12 @@
  *= require foundation_and_overrides
 
  */
-
-.flash_notice, .flash_alert {
+ .ui-datepicker {
+   background: #333;
+   border: 1px solid #555;
+   color: pink;
+ }
+.notice, .alert {
   padding: 8px 35px 8px 14px;
   margin-bottom: 20px;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
@@ -29,17 +33,16 @@
   font-size: 14px;
   line-height: 20px;
 }
-.flash_notice {
+.notice {
   background-color: #dff0d8;
   border-color: #d6e9c6;
   color: #468847;
 }
-.flash_alert {
+.alert {
   background-color: #f2dede;
   border-color: #eed3d7;
   color: #b94a48;
 }
-
 @charset "UTF-8";
 /* CSS Document */
 html, body {

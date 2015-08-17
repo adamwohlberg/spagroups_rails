@@ -1,19 +1,19 @@
 <div class="row">
 	<div class="large-12 columns large-centered"></div>
-		<h2>All-inclusive spa resort vacations</h2>
-		<p><em>Reserve your space at group rates:</em></p>
+		<h3>All-inclusive spa resort vacations</h3>
+		<h5><em>Reserve your next <b>destination spa vacation</b> at group rates:</em></h5>
 	<div class="large-4 columns large-centered">
 <!-- 	<p>1. Location 2. Arrival Date.</p> -->
-	<%= form_for @reservation do |f| %>
-		<p>
-		  Location <%= f.collection_select :spa_id, Spa.order(:id),:id, :name_with_city  %>
-		  Arrival date: <%= f.text_field :arrival_date %><br />
-		  Nights: <%= f.select :nights, (2..14) %><br />
-		  Total Guests (<em>singles are OK!</em>): <%= f.select :guests, (1..12) %><br />
-		  Your first name: <%= f.text_field :first_name %><br />
-		  Email address: <%= f.text_field :email %><br />
-		  <%= f.submit "Group Me!" %>
-		</p>
-	<% end %>
+	<div>
+		<%= form_for @reservation do |f| %>
+			  Location <%= f.collection_select :spa_id, Spa.order(:id),:id, :name_with_city  %>
+			  Arrival date: <%= f.text_field :arrival_date %>
+			  Nights: <%= f.select :nights, (2..14) %>
+			  Total Guests (<em>singles are OK!</em>): <%= f.select :guests, (1..12) %>
+			  Your first name: <%= f.text_field :first_name %>
+			  Email address: <%= f.text_field :email %>
+			  <%= f.submit "Group Me!" %>
+		<% end %>
+	</div>
 	</div>
 </div> 

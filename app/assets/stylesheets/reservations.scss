@@ -32,5 +32,13 @@
 }
 
 #selector_1, #selector_2 {
-	width: 200px;
+	width: 400px;
+}
+
+#reservations .calendar td:hover {
+	background-color: #FFF0F2;
+}
+
+.group_minimum_size_met {
+	background-color: #D7F2FF;	
 }

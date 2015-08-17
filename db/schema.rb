@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150816141640) do
+ActiveRecord::Schema.define(version: 20150817001917) do
 
   create_table "confirmations", id: false, force: :cascade do |t|
     t.integer "user_id",       limit: 4
@@ -27,11 +27,6 @@ ActiveRecord::Schema.define(version: 20150816141640) do
   create_table "registrations", id: false, force: :cascade do |t|
     t.integer "user_id",       limit: 4
     t.integer "group_trip_id", limit: 4
-  end
-
-  create_table "reservation_dates", force: :cascade do |t|
-    t.string "reservation_id", limit: 255
-    t.date   "date"
   end
 
   create_table "reservations", force: :cascade do |t|

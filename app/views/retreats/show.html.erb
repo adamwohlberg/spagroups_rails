@@ -1,7 +1,11 @@
-<% @retreats.each do |retreat| %>
-	<h5>Name: <%= retreat.name %></h5>
-	<h5>Spa: <%= retreat.spa_id %></h5>
-	<h5>Guests (pending):</h5>
-	<h5>Guests (confirmed w/ deposit):</h5>
-	<h5>Register</h5>
-<% end %>
+<div class="row">
+	<div classs="large-9 columns">
+		<% @retreats.each do |retreat| %>
+			<h5>Name: <%= retreat.name %></h5>
+			<h5>Spa: <%= retreat.spa_id %></h5>
+			<h5>Guests (pending):</h5>
+			<h5>Guests (confirmed w/ deposit):</h5>
+			<h5>Register</h5>
+		<% end %>
+	</div>
+</div>

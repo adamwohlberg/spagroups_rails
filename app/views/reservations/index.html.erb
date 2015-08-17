@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="large-9 columns" role="content">
+  <div class="medium-9 columns" role="content">
     <div id="reservations">
       <h2 id="month">
         <%= link_to "<<", date: @date.prev_month %>
@@ -9,20 +9,17 @@
       <%= calendar @date do |date| %>
         <%= date.day %>
         <% if (@reservations_count_by_date[date].to_i > 10) %>          
-              <li class="reservation_counter_with_guest_minimum_met"><%= link_to(@reservations_count_by_date[date], retreats_path ) %></li>
+              <li class="reservation_counter_with_guest_minimum_met group_minimum_size_met"><%= link_to(@reservations_count_by_date[date], retreats_path, {date: date} ) %></li>
         <% elsif (@reservations_count_by_date[date].to_i > 0)  %>
               <li class="reservation_counter"><%= link_to(@reservations_count_by_date[date], "#" ) %></li>
         <% end %>
       <% end %>
     </div>
-      <div class="large-4 columns">
-        <div id="selector_1" class="inline"><%= collection_select :spa, :spa_id, Spa.order(:id), :id, :name_with_city  %></div>
-      </div>
-      <div class="large-4 columns">
-        <div id="selector_2" class="inline"><%= collection_select :status, :spa_id, Spa.order(:id), :id, :name_with_city  %></div>
-      </div>
+<!--       <div class="large-9 columns"> -->
+        <div id="selector_1" class="inline">limit results by <b>destination spa</b> location: <%= collection_select :spa, :spa_id, Spa.order(:id), :id, :name_with_city  %></div>
+<!--       </div> -->
   </div>
-  <aside class="large-3 columns">   
+  <aside class="medium-3 columns">   
     <div class="side-nav">
       <div style="height:240px; width:217px">
         <div style="padding:0px 0 0 0px; margin:-20px 0px 0px 0px; color: grey; font-weight:1.2em">Inspired Yoga & Spa Apparel:</div>
@@ -33,7 +30,7 @@
       <div id="responsiveAd1"> <!-- Google Adsense Code -->
                 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                 <ins class="adsbygoogle"
-                     style="display:inline-block;width:217px;height:240px"
+                     style="display:inline-block;width:217px;height:217px"
                      data-ad-client="ca-pub-1429880673944819"
                      data-ad-slot="5824155682"></ins>
                   <script>

@@ -10,8 +10,6 @@ Rails.application.routes.draw do
   get 'terms_of_use', to: 'static_pages#terms_of_use'
   get 'vip_list', to: 'static_pages#vip_list'
   get 'membership_terms', to: 'static_pages#membership_terms'
-
-  match ':controller/:action/:id', via: [:get, :post]
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -68,5 +66,5 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
   
-  match ':controller(/:action((/:spa/(/:status/:id(.:format)))))', via: [:get, :post]
+  match ':controller(/:action(/:spa/(/:status/(/:date(:id(.:format))))))', via: [:get, :post]
 end

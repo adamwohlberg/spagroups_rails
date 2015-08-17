@@ -1,7 +1,8 @@
 <% @retreats.each do |retreat| %>
 <!--   <a href="group.php?id=<?php echo $group_id; ?>"> -->
   <div class="roundedImage" style="height:263px; width:419px; float:left; background-image:url(images/sauna.png); cursor:normal">
-    <div class="btnJoin"><a href="group.php?id=<?php echo $group_id; ?>" style="text-decoration:none; color:white; display:block; height:100%; width:100%">View Details</a></div>
+    <div style="text-decoration:none; color:white; display:block; height:100%; width:100%"><%= link_to("View Details", retreat_path(1), :class => "btnJoin") %></div>
+
     <div class="roundedBottom" style="margin:83px 0 0 0; background-image:url(images/blackbottom.png); height:66px; width:420px; color:#FFF; font-size:22px; cursor:default">
       <div style="float:left; margin:9px 0 0 10px;" class="links"><a href="group.php?id=<?php echo $group_id; ?>"><%= retreat.spa.name %></a><br />
         <span style="font-size:16px; color:#CCC"><%= retreat.spa.city %></span></div>

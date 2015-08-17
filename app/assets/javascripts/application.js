@@ -19,3 +19,12 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+
+$( document ).ready(function() {
+   $('td').each(function() {
+   	if ($(this).val() > 10) {
+   		$(this).addClass('today');
+   	};    
+ });
+});

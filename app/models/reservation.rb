@@ -7,12 +7,12 @@ class Reservation < ActiveRecord::Base
 	scope :deposit_paid, -> { where(status: 'deposit_paid') }
 
 	before_save :calculate_departure_date
+	after_save :populate_table_reservation_dates
 
 	private
 
 	def calculate_departure_date
 		self.departure_date = self.arrival_date + nights
 	end
-
 
 end
