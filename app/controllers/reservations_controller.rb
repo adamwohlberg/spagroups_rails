@@ -3,11 +3,8 @@ class ReservationsController < ApplicationController
   layout 'squeeze_page', only: [:new]
 
   def index
-    @reservations = Reservation.all
-    @reservations_by_date = @reservations.group_by(&:arrival_date)
-    @reservations_count_by_date = @reservations.group(:arrival_date).sum(:guests)
+    @reservations = Reservation.all.group_by_day(:booked_date, format: "%Y-%m-%d").count
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
-    # @all_reservations = all_reservations
   end
 
   def new

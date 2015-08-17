@@ -1,0 +1,22 @@
+<div id="reservations">
+  <h2 id="month">
+    <%= link_to "<<", date: @date.prev_month %>
+    <%= @date.strftime("%B %Y") %>
+    <%= link_to ">>", date: @date.next_month %>
+  </h2>
+  <%= calendar @date do |date| %>
+    <%= date.day %>
+    <% date_key = date.to_s %>
+    <% if @reservations[date_key] %>
+      <% if (@reservations[date_key] > 10) %>
+        <li class="reservation_counter_with_guest_minimum_met group_minimum_size_met">
+          <%= link_to(@reservations[date_key], retreats_path(date)) %>
+        </li>
+      <% else %>
+        <li class="reservation_counter">
+          <%= link_to(@reservations[date_key], "#" ) %>
+        </li>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
