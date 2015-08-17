@@ -1,8 +1,7 @@
 class ReservationGuestNightsController < ApplicationController
 
   def create
-  	@reservation_guest_nights = ReservationGuestNight.new(reservation_guest_night_params)
-  	@reservation_guest_nights.save
+  	@reservation_guest_night = ReservationGuestNight.new(reservation_guest_night_params)
   end
   
   private
