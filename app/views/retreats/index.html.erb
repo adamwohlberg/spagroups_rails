@@ -1,17 +1,43 @@
 <div class="row">
-  <div class="large-9 columns centered">
-    <% @retreats.each do |retreat| %>
-     	<h5>Name: <%= retreat.name %></h5>
-     	<h5>Spa: <%= retreat.spa.name %></h5>
-     	<h5>Spa: <%= retreat.spa.citystate %></h5>
-      <h5>Arrival date: <%= retreat.arrival_date.strftime("%B %d, %Y") %></h5>
-     	<h5>Registered: <%= retreat.registered %></h5>
-      <h5>Confirmed: <%= retreat.confirmed %></h5>
-     	<h5>Group rates at: <%= retreat.group_rates_at %></h5>
-      <h5>Comp stay at: <%= retreat.comp_stay_at %></h5>
-      <%= link_to('view details', retreat_path(retreat.id)) %>
-      <hr>
-    <% end %> 
+  <div class="large-9 columns">
+    <div style="float:none;">
+      <div class="demo upcomingGroups">
+ 	    		<% @retreats.each do |retreat| %>                     
+	          <div class="roundedImage" style="height:263px; width:419px; float:left; cursor:normal; margin: 4px 5px;">                     
+	            <div><%= image_tag('banner-7.png', :class => "counterFlag") %></div>
+	            <div class="btnJoin"><%= link_to('View Details', retreat_path(retreat.id), :style => "text-decoration:none; color:white; display:block; height:100%; width:100%; margin:-4px 0 0 0;") %></div>
+	            <div class="roundedBottom black_bottom" style="margin:88px 0px 0px 0px; height:66px; width:418px; color:#FFF; font-size:22px; cursor:default">
+	              <div style="float:left; margin:17px 0px 0px 10px; line-height: 1.1em;" class="links"><a href="#"><%= retreat.spa.name %></a><br />
+	                <span style="font-size:16px; color:#CCC;"><%= retreat.spa.citystate %></span></div>
+	              <div style="float:right; margin:9px 10px 0 0px; text-align:right"><span style="font-size:11px; color:#CCC">Arrival:</span><%= retreat.arrival_date.strftime("%B %d, %Y") %><span class="links"><a href=""></a><br  />
+	                <div style="font-size:11px; margin:-5px 0 0 0; color:#CCC">Expires in: <span style="font-size:16px; color:#ff68fd;">30 days</span></div>
+	              </div>
+	            </div>
+	          </div>
+          <% end %>
+      </div>
+     </div>
 	</div>
 </div>
+
+<!-- <div class="row">
+  <div class="large-9 columns centered">
+  	<div> -->
+	    <%# @retreats.each do |retreat| %>
+	<!--      	<h5>Name: <%# retreat.name %></h5> -->
+<!-- 	     	<h5><%# retreat.spa.name %></h5>
+	     	<h5><%# retreat.spa.citystate %></h5>
+	      <h5>Arrival: <%# retreat.arrival_date.strftime("%B %d, %Y") %></h5>
+	      <h5>Expires in: </h5>
+	     	<h5>Registered: <%# retreat.registered %></h5> -->
+	<!--       <h5>Confirmed: <%# retreat.confirmed %></h5> -->
+	<!--      	<h5>Group rates at: <%# retreat.group_rates_at %></h5> -->
+	<!--       <h5>Comp stay at: <%# retreat.comp_stay_at %></h5> -->
+	      <%# link_to('view details', retreat_path(retreat.id)) %>
+<!-- 	      <hr>
+	    <%# end %>
+	  </div>
+	</div>
+</div> -->
+
 

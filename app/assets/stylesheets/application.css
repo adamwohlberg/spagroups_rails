@@ -218,17 +218,11 @@ input[type='submit']:hover {
           transition: all .7s ease;*/
 }
  .black_bottom {
-/*	 background-image: url('/assets/blackbottom.png');
-	 background-size: contain;*/	
-	 margin:88px 0px 0px 0px;
-	 height:66px;
-	 width:417px;
+	 background-image: url('/assets/blackbottom.png');	
 	 color:#FFF;
-	 background-color:#000;
 	 font-size:22px;
 	 cursor:default;
-	 border-radius: 0px 0px 15px 15px;
-	 opacity:0.8;
+	 opacity:0.9;
  }
 .roundedImage:hover {
 	filter: saturate(100%);
@@ -243,6 +237,7 @@ input[type='submit']:hover {
 .counterFlag {
 	border: 0;
 	outline: none;
+	margin-left: -281px;
 }
 #or {
 	color: #6d6d6d;
@@ -491,7 +486,7 @@ body:before {
 /*	background-repeat:no-repeat;*/
 	float:right;
 	font-size: 1.1em; 
-	margin:45px 5px 0 0;
+	margin:25px 5px 0 0;
 	color: #000 bold;
 	border-radius: 5px 5px 5px 5px;
 	text-decoration: none;
