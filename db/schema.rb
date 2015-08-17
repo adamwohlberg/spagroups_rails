@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20150817050708) do
     t.string   "status",         limit: 255, default: "pending"
     t.integer  "guests",         limit: 4
     t.date     "departure_date"
-    t.date     "booked_date",                                    null: false
+    t.date     "booked_date"
   end
 
   create_table "retreats", force: :cascade do |t|

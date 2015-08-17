@@ -20,18 +20,18 @@
 
 class Reservation < ActiveRecord::Base
 	belongs_to :spa
+	belongs_to :user
 	has_many :reservation_dates
-	validates_presence_of :arrival_date
+	# validates_presence_of :arrival_date
 	scope :pending, -> { where(status: 'pending') }
 	scope :confirmed, -> { where(status: 'confirmed') }
 	scope :deposit_paid, -> { where(status: 'deposit_paid') }
 
-	before_save :calculate_departure_date
+	# before_save :calculate_departure_date
 
 	private
 
-	def calculate_departure_date
-		self.departure_date = self.arrival_date + nights
-	end
-
+	# def calculate_departure_date
+	# 	self.departure_date = self.arrival_date + nights
+	# end
 end
