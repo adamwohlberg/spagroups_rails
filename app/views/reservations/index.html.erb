@@ -8,11 +8,11 @@
       </h2>
       <%= calendar @date do |date| %>
         <%= date.day %>
-        <%# if (@reservations_count_by_date[date].to_i > 10) %>          
-              <li class="reservation_counter_with_guest_minimum_met group_minimum_size_met"><%# link_to(@reservations_count_by_date[date], retreats_path(date)) %></li>
-        <%# elsif (@reservations_count_by_date[date].to_i > 0)  %>
-              <li class="reservation_counter"><%# link_to(@reservations_count_by_date[date], "#" ) %></li>
-        <%# end %>
+        <% if (@reservations_count_by_date[date].to_i > 10) %>          
+              <li class="reservation_counter_with_guest_minimum_met group_minimum_size_met"><%= link_to(@reservations_count_by_date[date], retreats_path(date)) %></li>
+        <% elsif (@reservations_count_by_date[date].to_i > 0)  %>
+              <li class="reservation_counter"><%= link_to(@reservations_count_by_date[date], "#" ) %></li>
+        <% end %>
       <% end %>
     </div>
     <span>*All destination spa locations. Click date to view retreat details by destination spa location.</span>
