@@ -16,6 +16,12 @@
  *= require foundation_and_overrides
 
  */
+
+#register_button {
+	width: 300px;
+	height: 50px;
+	padding-top: 12px;
+}
  .ui-datepicker {
    background: #333;
    border: 1px solid #555;
@@ -486,7 +492,7 @@ body:before {
 /*	background-repeat:no-repeat;*/
 	float:right;
 	font-size: 1.1em; 
-	margin:25px 5px 0 0;
+	margin:50px 5px 0 0;
 	color: #000 bold;
 	border-radius: 5px 5px 5px 5px;
 	text-decoration: none;
