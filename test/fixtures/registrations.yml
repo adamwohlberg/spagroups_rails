@@ -1,3 +1,11 @@
+# == Schema Information
+#
+# Table name: registrations
+#
+#  user_id       :integer
+#  group_trip_id :integer
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 # This model initially had no columns defined.  If you add columns to the
