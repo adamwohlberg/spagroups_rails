@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :reservations
   resources :retreats
+  resources :reservation_guest_nights
 
   get 'privacy_policy', to: 'static_pages#privacy_policy'
   get 'faq', to: 'static_pages#faq'

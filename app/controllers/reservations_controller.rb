@@ -4,8 +4,8 @@ class ReservationsController < ApplicationController
 
   def index
     @reservations = Reservation.all
-    @reservations_by_date = @reservations.group_by(&:arrival_date)
-    @reservations_count_by_date = @reservations.group(:arrival_date).sum(:guests)
+    # @reservations_by_date = @reservations.group_by(&:arrival_date)
+    # @reservations_count_by_date = @reservations.group(:arrival_date).sum(:guests)
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
   end
 

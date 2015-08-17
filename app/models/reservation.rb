@@ -8,13 +8,5 @@ class Reservation < ActiveRecord::Base
 	scope :confirmed, -> { where(status: 'confirmed') }
 	scope :deposit_paid, -> { where(status: 'deposit_paid') }
 
-	before_save :calculate_departure_date
-
-
-	private
-
-	def calculate_departure_date
-		self.departure_date = self.arrival_date + nights
-	end
 
 end

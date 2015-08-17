@@ -8,8 +8,10 @@
 		<%= form_for @reservation do |f| %>
 			  Location <%= f.collection_select :spa_id, Spa.order(:id),:id, :name_with_city  %>
 			  Arrival date: <%= f.text_field :arrival_date %>
-			  Nights: <%= f.select :nights, (2..14) %>
-			  Total Guests (<em>singles are OK!</em>): <%= f.select :guests, (1..12) %>
+			   <%= fields_for :reservation_guest_nights do |g| %>
+    			  Nights: <%= g.select :nights, (2..14) %>
+			  		Total Guests (<em>singles are OK!</em>): <%= g.select :guests, (1..12) %>
+  			<% end %>
 			  Your first name: <%= f.text_field :first_name %>
 			  Email address: <%= f.text_field :email %>
 			  <%= f.submit "Group Me!" %>
