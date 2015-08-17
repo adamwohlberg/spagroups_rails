@@ -7,7 +7,6 @@ class ReservationsController < ApplicationController
     @reservations_by_date = @reservations.group_by(&:arrival_date)
     @reservations_count_by_date = @reservations.group(:arrival_date).sum(:guests)
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
-    # @all_reservations = all_reservations
   end
 
   def new
@@ -31,6 +30,6 @@ class ReservationsController < ApplicationController
   private
 
   def reservation_params
-  	params.require(:reservation).permit(:user_id, :spa_id, :arrival_date, :nights, :first_name, :email, :guests, :status)
+  	params.require(:reservation).permit(:user_id, :spa_id, :arrival_date,:first_name, :email, :status, reservation_guest_nights_attributes: [ :reservation_id, :nights, :guests ])
   end
 end
