@@ -11,9 +11,10 @@
  * file per style scope.
  *
  *= require jquery-ui
- *= require_tree .
- *= require_self
+ *= require reservations
+ *= require group_trip_calendar
  *= require foundation_and_overrides
+ *= require_self
 
  */
 #month a:hover {
