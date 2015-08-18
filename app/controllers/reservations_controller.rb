@@ -21,7 +21,7 @@ class ReservationsController < ApplicationController
       flash[:notice] = "Congratulations! Your reservation request has successfully been added to our group calendar."
       redirect_to reservations_path
     else
-      flash[:alert] = "Something is wrong - please check all fields."
+      flash[:alert] = "Something is wrong - please complete all fields to continue."
       render 'new'
     end
   end

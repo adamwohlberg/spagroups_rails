@@ -1,12 +1,12 @@
 <div class="row">
 	<div class="small-12 columns large-centered"></div>
 		<h3>All-inclusive spa resort vacations</h3>
-		<h5><em>Reserve your next <b>destination spa vacation</b> at group rates:</em></h5>
+		<h5><em>Reserve your dream <b>destination spa vacation</b> at group rates:</em></h5>
 	<div class="small-8 large-4 columns small-centered">
 <!-- 	<p>1. Location 2. Arrival Date.</p> -->
 	<div>
 		<%= form_for @reservation do |f| %>
-			  Location <%= f.collection_select :spa_id, Spa.order(:id),:id, :name_with_city  %>
+			  Destinatin Spa Location <%= f.collection_select :spa_id, Spa.order(:id),:id, :name_with_city  %>
 			  Arrival date: <%= f.text_field :arrival_date %>
     	  Nights: <%= f.select :nights, (2..14) %>
 			  Total Guests (<em>singles are OK!</em>): <%= f.select :guests, (1..12) %>

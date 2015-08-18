@@ -16,7 +16,10 @@
  *= require foundation_and_overrides
 
  */
-
+#month a:hover {
+  color: pink !important;
+  font-weight: 900;
+}
 #register_button {
 	width: 300px;
 	height: 50px;
@@ -569,7 +572,7 @@ input[type='password']
 }
 input {
 	font-size: 1.2em;
-	margin: 0px 0px 0px 0px;
+	margin: 10px 0px 0px 0px;
 	height: 1.2em;
 	width: 90%;
 }

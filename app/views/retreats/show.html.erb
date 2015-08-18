@@ -1,15 +1,16 @@
 <div class="row">
   <div class="small-12 columns small-centered">
-     	<h3><b>Group Details:</b> <%= @retreat.name %></h3>
-     	<h5><b>Spa:</b> <%= @retreat.spa.name %></h5>
-     	<h5><b>City/State:</b> <%= @retreat.spa.citystate %></h5>
+    <h3><b>Group Details:</b> <%= @retreat.name %></h3>
+    <div style="text-align:left; border:2px solid black; border-radius: 20px; padding:20px; margin-bottom: 20px">
+     	<h5><b>Spa:</b> Ipsum lorem whatsum bacon bitsum </h5>
+     	<h5><b>City/State:</b> Hanalei,CA </h5>
       <h5><b>Arrival date:</b> <%= @retreat.arrival_date.strftime("%B %d, %Y") %></h5>
      	<h5><b>Registered:</b> <%= @retreat.registered %></h5>
-      <h5><b>Confirmed:</b> <%= @retreat.confirmed %></h5>
+      <h5><b>Confirmed w/ deposit:</b> <%= @retreat.confirmed %></h5>
      	<h5><b>Group rates at:</b> <%= @retreat.group_rates_at %></h5>
-      <h5><b>Comp stay at:</b> <%# @retreat.comp_stay_at %></h5>
       <h5><b>Retreat description:</b> <%= @retreat.description %></h5>
-      <%= link_to('Register',"http://paypal.com", :class => "button large round", :id => "register_button") %>
+    </div>
+      <%= link_to('Register',"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=EGJA6Q9JGDCC4", :class => "button large round", :id => "register_button") %>
 	</div>
 </div>
 
