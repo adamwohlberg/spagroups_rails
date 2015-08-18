@@ -12,6 +12,8 @@
     <%= csrf_meta_tags %>
   </head>
 
+    <%= render 'layouts/header_no_links' %> 
+  
   <body>
     <% if flash[:notice] %>
       <p class="notice"><%= notice %></p> 
@@ -20,7 +22,7 @@
       <p class="alert"><%= alert %></p>
     <% end %>
     <div class="row">
-      <div class="large-9 columns">
+      <div class="large-12 columns">
         <%= yield %>
       </div>
     </div>
