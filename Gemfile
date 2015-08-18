@@ -30,7 +30,7 @@ gem 'foundation-rails'
 gem 'seed_dump'
 # Use Unicorn as the app server
 # gem 'unicorn'
-gem 'activeadmin', '~> 0.6.6'
+gem 'activeadmin', '~> 1.0.0.pre1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
