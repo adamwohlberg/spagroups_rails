@@ -8,7 +8,7 @@
 	          <div style="float:left; margin:17px 0px 0px 10px; line-height: 1.1em;" class="links"><a href="#"><%= retreat.spa.name %></a><br />
 	            <span style="font-size:16px; color:#CCC;"><%= retreat.spa.citystate %></span></div>
 	          <div style="float:right; margin:9px 10px 0 0px; text-align:right"><span style="font-size:11px; color:#CCC; padding-right:3px;">Arrival:</span><%= retreat.arrival_date.strftime("%B %d, %Y") %><span class="links"><a href=""></a><br  />
-	            <div style="font-size:11px; margin:-5px 0 0 0; color:#CCC">Expires in: <span style="font-size:16px; color:#ff68fd;">30 days</span></div>
+	            <div style="font-size:11px; margin:-5px 0 0 0; color:#CCC">Expires in: <span style="font-size:16px; color:#ff68fd;"><%= ((retreat.arrival_date-Time.now.to_date).to_i.abs).to_s %> days</span></div>
 	          </div>
 	        </div>
 	      </div>

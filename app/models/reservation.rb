@@ -2,6 +2,8 @@ class Reservation < ActiveRecord::Base
 	belongs_to :spa
 	has_many :guest_nights
 	validates_presence_of :arrival_date
+	validates_presence_of :first_name
+	validates_presence_of :email
 	
 	scope :pending, -> { where(status: 'pending') }
 	scope :confirmed, -> { where(status: 'confirmed') }
@@ -21,6 +23,4 @@ class Reservation < ActiveRecord::Base
 			i += 1
 		end
 	end
-
-
 end

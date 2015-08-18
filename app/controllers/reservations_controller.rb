@@ -18,7 +18,7 @@ class ReservationsController < ApplicationController
   	@reservation = Reservation.new(reservation_params)
     # @reservation = ReservationFactory.new(reservation_params)
     if @reservation.save
-      flash[:notice] = "Congratulations! Your reservation has successfully been added to our group calendar."
+      flash[:notice] = "Congratulations! Your reservation request has successfully been added to our group calendar."
       redirect_to reservations_path
     else
       flash[:alert] = "Something is wrong - please check all fields."
