@@ -208,7 +208,8 @@ input[type='submit']:hover {
 .roundedImage {
 /*	opacity:1.00;
 	filter:alpha(opacity=100); /* For IE8 and earlier */
-	background-image: url('/assets/wonderland-big.png');
+/*	background-image: url('/assets/wonderland-big.png');*/
+background-image: image-url("wonderland-big.png");
   background-size: 419px 263px;
 	border-radius: 15px 15px 15px 15px;
 	box-shadow: 2px 2px 2px #ccc;
