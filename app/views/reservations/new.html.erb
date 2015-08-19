@@ -6,7 +6,7 @@
 <!-- 	<p>1. Location 2. Arrival Date.</p> -->
 	<div>
 		<%= form_for @reservation do |f| %>
-			  Destinatin Spa Location: <%= f.collection_select :spa_id, Spa.order(:id),:id, :name_with_city  %>
+			  Destination Spa Location: <%= f.collection_select :spa_id, Spa.order(:id),:id, :name_with_city  %>
 			  Arrival date: <%= f.text_field :arrival_date %>
     	  Nights: <%= f.select :nights, (2..14) %>
 			  Total Guests (<em>singles are OK!</em>): <%= f.select :guests, (1..12) %>
