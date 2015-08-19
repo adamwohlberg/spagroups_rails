@@ -14,7 +14,7 @@ include Faker
   80.times do
   Reservation.create!([
     {user_id: nil, 
-      spa_id: rand(1..7), 
+      spa_id: Spa.pluck(:id).sample, 
       arrival_date: rand(2.months.ago..4.weeks.from_now), 
       first_name: Faker::Name.first_name, 
       email: Faker::Internet.email, 
@@ -27,7 +27,7 @@ include Faker
   500.times do
   Reservation.create!([
     {user_id: nil, 
-      spa_id: rand(1..7), 
+      spa_id: Spa.pluck(:id).sample, 
       arrival_date: rand(4.weeks.from_now..3.years.from_now), 
       first_name: Faker::Name.first_name, 
       email: Faker::Internet.email, 
