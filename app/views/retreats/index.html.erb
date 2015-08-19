@@ -3,7 +3,7 @@
 	  		<% @retreats.each do |retreat| %>                     
 	      <div class="roundedImage" style="height:263px; width:419px; float:left; cursor:normal; margin: 4px 5px;">                     
 	        <div><%= image_tag('banner-'+rand(1..7).to_s+'.png', :class => "counterFlag") %></div>
-	        <div class="btnJoin"><%= link_to('View Details', retreat_path(1), :style => "text-decoration:none; color:white; display:block; height:100%; width:100%; margin:-4px 0 0 0;") %></div>
+	        <div class="btnJoin"><%= link_to('View Details', retreat_path(Retreat.first.id), :style => "text-decoration:none; color:white; display:block; height:100%; width:100%; margin:-4px 0 0 0;") %></div>
 	        <div class="roundedBottom black_bottom" style="margin:88px 0px 0px 0px; height:66px; width:418px; color:#FFF; font-size:22px; cursor:default">
 	          <div style="float:left; margin:17px 0px 0px 10px; line-height: 1.1em;" class="links"><a href="#"><%= retreat.spa.name %></a><br />
 	            <span style="font-size:16px; color:#CCC;"><%= retreat.spa.citystate %></span></div>
