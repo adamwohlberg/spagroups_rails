@@ -1,5 +1,15 @@
 include Faker
 
+  Spa.create!([
+    {name: "Crayon Ranch", city: "Tucson", state: "AZ"},
+    {name: "Ranch of the Door", city: "Tecate", state: "MX"},
+    {name: "Orange Mountain", city: "St. George", state: "UT"},
+    {name: "Mirabel Resort", city: "Tucson", state: "AZ"},
+    {name: "The Redwoods at Ojai", city: "Ojai", state: "CA"},
+    {name: "Lake Awesome Spa", city: "Lake Awesome", state: "TX"},
+    {name: "Trypalu Yoga", city: "Lenox", state: "MA"}
+  ])
+
   # Populate current month
   80.times do
   Reservation.create!([
@@ -29,15 +39,4 @@ include Faker
 
   Retreat.create!([
     {arrival_date: "2016-10-01", spa_id: 2, group_leader_id: nil, name: "Old ladies YO!", registered: 12, confirmed: nil, group_rates_at: 8, comp_stay_at: 12, facebook_url: nil, image: nil, facebook_image: nil, description: nil, paypal: nil}
-  ])
-
-  Spa.create!([
-    {name: "Crayon Ranch", city: "Tucson", state: "AZ"},
-    {name: "Crayon Ranch", city: "Lenox", state: "MA"},
-    {name: "Ranch of the Door", city: "Tecate", state: "MX"},
-    {name: "Orange Mountain", city: "St. George", state: "UT"},
-    {name: "Mirabel Resort", city: "Tucson", state: "AZ"},
-    {name: "The Redwoods at Ojai", city: "Ojai", state: "CA"},
-    {name: "Lake Awesome Spa", city: "Lake Awesome", state: "TX"},
-    {name: "Trypalu Yoga", city: "Lenox", state: "MA"}
   ])
