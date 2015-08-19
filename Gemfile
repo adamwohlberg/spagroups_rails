@@ -34,7 +34,7 @@ gem 'activeadmin', '~> 1.0.0.pre1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'rails_12factor', group: :production
-
+gem 'faker', '~> 1.4.3'
 gem 'puma'
 
 group :development, :test do
