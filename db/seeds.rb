@@ -1,7 +1,5 @@
 include Faker
 
-if Rails.env.development?
-
   # Populate current month
   80.times do
   Reservation.create!([
@@ -43,4 +41,3 @@ if Rails.env.development?
     {name: "Lake Awesome Spa", city: "Lake Awesome", state: "TX"},
     {name: "Trypalu Yoga", city: "Lenox", state: "MA"}
   ])
-end
