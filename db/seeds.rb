@@ -15,7 +15,7 @@ include Faker
   Reservation.create!([
     {user_id: nil, 
       spa_id: rand(1..7), 
-      arrival_date: rand(2.months.ago..2.weeks.from_now), 
+      arrival_date: rand(2.months.ago..4.weeks.from_now), 
       first_name: Faker::Name.first_name, 
       email: Faker::Internet.email, 
       status: "pending", 
@@ -28,7 +28,7 @@ include Faker
   Reservation.create!([
     {user_id: nil, 
       spa_id: rand(1..7), 
-      arrival_date: rand(2.weeks.from_now..3.years.from_now), 
+      arrival_date: rand(4.weeks.from_now..3.years.from_now), 
       first_name: Faker::Name.first_name, 
       email: Faker::Internet.email, 
       status: "pending", 
@@ -36,3 +36,7 @@ include Faker
       nights: rand(2..7)}
   ])
   end
+
+  Retreat.create!([
+    {arrival_date: "2016-10-01", spa_id: 2, group_leader_id: nil, name: "Old ladies YO!", registered: 12, confirmed: nil, group_rates_at: 8, comp_stay_at: 12, facebook_url: nil, image: nil, facebook_image: nil, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", paypal: nil}
+  ])

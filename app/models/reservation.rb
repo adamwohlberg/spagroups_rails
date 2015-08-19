@@ -15,7 +15,7 @@ class Reservation < ActiveRecord::Base
 		# for each night in reservation date range, create a record in the guest nights table
 		i = 0
 		while i < self.nights do
-			GuestNight.create!(
+			guest = GuestNight.create!(
 				:reservation_id => self.id,
 				:guests => self.guests,
 				:date => self.arrival_date + i

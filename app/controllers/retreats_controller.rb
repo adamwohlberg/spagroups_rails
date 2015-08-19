@@ -11,7 +11,7 @@ class RetreatsController < ApplicationController
 	end
 
 	def show
-		@retreat = Retreat.find(12)
+		@retreat = Retreat.find(1)
 		# @retreat = Retreat.find(params[:id])
 	end
 

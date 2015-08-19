@@ -13,7 +13,7 @@
       <h5><b>Retreat description:</b> <%= @retreat.description %></h5>
       *discount varies based on chosen room type and single/double occupancy.
     </div>
-      <%= link_to('Register',"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=EGJA6Q9JGDCC4", :class => "button large round", :id => "register_button") %>
+      <%= link_to('Register', paypal_thank_you_path, :class => "button large round", :id => "register_button") %>
 	</div>
 </div>
 

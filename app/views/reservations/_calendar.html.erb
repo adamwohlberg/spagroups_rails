@@ -5,7 +5,7 @@
       </h2>
       <%= calendar @date do |date| %>
         <%= date.day %>
-        <% if (@reservations_by_guest_night[date].to_i > 10) %>          
+        <% if (@reservations_by_guest_night[date].to_i >= 10 && Reservation.where(:arrival_date => date).present? ) %>          
               <li class="reservation_counter_with_guest_minimum_met group_minimum_size_met"><%= link_to(@reservations_by_guest_night[date], retreats_path(:date => date)) %></li>
         <% elsif (@reservations_by_guest_night[date].to_i > 0)  %>
               <li class="reservation_counter"><%= link_to(@reservations_by_guest_night[date], "#" ) %></li>

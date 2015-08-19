@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   get 'terms_of_use', to: 'static_pages#terms_of_use'
   get 'vip_list', to: 'static_pages#vip_list'
   get 'membership_terms', to: 'static_pages#membership_terms'
-  
+  get 'paypal_thank_you', to: 'static_pages#paypal_thank_you'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
